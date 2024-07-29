@@ -15,4 +15,16 @@ public class OrderCreatedEventFactory {
 
     return event;
   }
+
+  public static OrderCreatedEvent buildWithTwoItems(){
+
+    var item1 = new OrderItemEvent("notebook", 1, BigDecimal.valueOf(150.00));
+    var item2 = new OrderItemEvent("mouse", 1, BigDecimal.valueOf(50.00));
+
+    var event = new OrderCreatedEvent(1L, 2L, List.of(item1, item2));
+
+    return event;
+  }
+
+
 }
