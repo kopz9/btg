@@ -2,6 +2,8 @@ package org.example.btg.factory;
 
 import org.example.btg.entity.OrderEntity;
 import org.example.btg.entity.OrderItem;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,4 +22,9 @@ public class OrderEntityFactory {
 
     return entity;
   }
+
+  public static Page<OrderEntity> buildWithPage(){
+    return new PageImpl<>(List.of(build()));
+  }
+
 }
